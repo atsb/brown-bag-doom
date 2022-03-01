@@ -1,0 +1,12 @@
+# [gibbon] For MinGW
+CC = gcc
+CFLAGS = -DFEATURE_SOUND -DFEATURE_DEHACKED -D_WIN32 -DWIN32 -IC:\Users\Ad4m\Games\DEV\GCC\MinGW\x86_64-w64-mingw32\include\ -IC:\Users\Ad4m\Games\DEV\GCC\MinGW\x86_64-w64-mingw32\include\SDL
+LDFLAGS = -LC:\Users\Ad4m\Games\DEV\GCC\MinGW\lib -Wl,-subsystem,windows -lmingw32 -lSDLmain -lSDL -lSDL_mixer -lSDL_image -lSDL_net -lmad -lsamplerate
+
+SRCS = $(wildcard *.c)
+
+chocolate-doom : $(SRCS)
+	$(CC) -o brown-bag-doom $^ $(CFLAGS) $(LDFLAGS)
+
+clean:
+	del brown-bag-doom
